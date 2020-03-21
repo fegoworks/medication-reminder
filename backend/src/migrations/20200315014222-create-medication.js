@@ -3,9 +3,9 @@ module.exports = {
     return queryInterface.createTable('Medications', {
       id: {
         allowNull: false,
-        autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.INTEGER
+        type: Sequelize.UUID,
+        unique: true,
       },
       userId: {
         type: Sequelize.UUID,
