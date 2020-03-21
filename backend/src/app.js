@@ -3,6 +3,7 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import cookieParser from 'cookie-parser';
 import env from 'dotenv';
+import medicationRoute from './routes/medication.route'
 
 env.config();
 const port = process.env.PORT || 3000;
@@ -31,6 +32,7 @@ app.use(
 app.use(cookieParser());
 
 // Routes here
+app.use('/api/v1/', medicationRoute)
 
 app.get('/', (req, res) => {
   res.send(`<h1>Welcome to the Medisafe Application</h1>
