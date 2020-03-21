@@ -1,5 +1,11 @@
 module.exports = (Sequelize, DataTypes) => {
   const Medication = Sequelize.define('Medication', {
+    id: {
+      type: DataTypes.UUID,
+      defaultValue: DataTypes.UUIDV4,
+      required: true,
+      primaryKey: true
+    },
     name: {
       type: DataTypes.STRING,
       required: true,
