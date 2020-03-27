@@ -3,6 +3,7 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import cookieParser from 'cookie-parser';
 import env from 'dotenv';
+import userRoute from './routes/user.route'
 import medicationRoute from './routes/medication.route'
 
 env.config();
@@ -32,6 +33,7 @@ app.use(
 app.use(cookieParser());
 
 // Routes here
+app.use('/api/v1/', userRoute)
 app.use('/api/v1/', medicationRoute)
 
 app.get('/', (req, res) => {
