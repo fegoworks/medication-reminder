@@ -6,6 +6,10 @@ module.exports = (Sequelize, DataTypes) => {
       required: true,
       primaryKey: true
     },
+    userId: {
+      type: DataTypes.UUID,
+      required: true
+    },
     name: {
       type: DataTypes.STRING,
       required: true,
@@ -46,7 +50,6 @@ module.exports = (Sequelize, DataTypes) => {
   Medication.associate = models => {
     Medication.belongsTo(models.User, {
       foreignKey: 'id',
-      as: 'userId',
       onDelete: 'CASCADE',
       onUpdate: 'CASCADE',
     });
