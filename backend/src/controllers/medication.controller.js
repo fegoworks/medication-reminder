@@ -32,7 +32,7 @@ class MedicationController {
         description,
       } = req.body;
 
-      const userId = req.userId;
+      const userId = req.id;
       const startMedication = new Date(start);
       const finishMedication = new Date(finish);
 
@@ -65,7 +65,7 @@ class MedicationController {
       const {
         id
       } = req.params;
-      const userId = req.userId;
+      const userId = req.id;
       const {
         name,
         dose,
